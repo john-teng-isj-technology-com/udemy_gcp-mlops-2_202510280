@@ -79,12 +79,16 @@ def load_model_artifact(file_name):
     blob.download_to_filename(file_name)
     return load(file_name)
 
-def write_metrics_to_bigquery(algo_name, training_time, model_metrics):
+def write_metrics_to_bigquery(algo_name, training_time, model_metrics, status= 'passed'):
     client = bigquery.Client()
     table_id = "daring-night-475804-a8.ml_ops.bank_campaign_model_metrics"
     table = bigquery.Table(table_id)
 
-    row = {"algo_name": algo_name, "training_time": training_time.strftime('%Y-%m-%d %H:%M:%S'), "model_metrics": json.dumps(model_metrics)}
+    row = {"algo_name": algo_name
+           , "training_time": training_time.strftime('%Y-%m-%d %H:%M:%S')
+           , "model_metrics": json.dumps(model_metrics)
+           , "status": status
+           }
     errors = client.insert_rows_json(table, [row])
 
     if errors == []:

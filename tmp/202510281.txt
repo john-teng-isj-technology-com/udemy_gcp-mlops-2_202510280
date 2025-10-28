@@ -1,0 +1,28 @@
+2025-10-28 10:45:05.805 UTC
+Metrics inserted successfully into BigQuery.
+ Metrics inserted successfully into BigQuery. 
+{
+insertId: "140n6f6fkzfzru"
+labels: {7}
+logName: "projects/daring-night-475804-a8/logs/airflow-worker"
+payload: "textPayload"
+receiveLocation: "northamerica-northeast1"
+receiveTimestamp: "2025-10-28T10:45:15.086155277Z"
+resource: {2}
+severity: "INFO"
+textPayload: "Metrics inserted successfully into BigQuery."
+timestamp: "2025-10-28T10:45:05.805166721Z"
+traceSampled: false
+}
+2025-10-28 10:45:06.422 UTC
+Done. Returned value was: None
+2025-10-28 10:45:06.467 UTC
+::group::Post task execution logs
+2025-10-28 10:45:06.467 UTC
+Marking task as SUCCESS. dag_id=dag_bank_campaign_continuous_training, task_id=model_evaluation, run_id=manual__2025-10-28T10:44:41.334482+00:00, execution_date=20251028T104441, start_date=20251028T104500, end_date=20251028T104506
+2025-10-28 10:45:06.659 UTC
+Task exited with return code 0
+2025-10-28 10:45:06.716 UTC
+0 downstream tasks scheduled from follow-on schedule check
+2025-10-28 10:45:06.719 UTC
+::endgroup::

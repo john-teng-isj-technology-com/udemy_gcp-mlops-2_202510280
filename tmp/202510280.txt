@@ -1,0 +1,121 @@
+{
+insertId: "1w023ncf3ckqzc"
+labels: {
+dag_processor_manager_id: "airflow-dag-processor-dd9cd7c97-db5jr"
+}
+logName: "projects/daring-night-475804-a8/logs/dag-processor-manager"
+receiveTimestamp: "2025-10-28T10:24:16.424193581Z"
+resource: {
+labels: {
+environment_name: "gcp-mlops-2"
+location: "northamerica-northeast1"
+project_id: "daring-night-475804-a8"
+}
+type: "cloud_composer_environment"
+}
+severity: "INFO"
+textPayload: "DAG_PROCESSOR_MANAGER_LOG:/home/airflow/gcs/dags/dag-bank-campaign.py                            1           0  3.96s           2025-10-28T10:23:32                      10"
+timestamp: "2025-10-28T10:24:08.998552083Z"
+}
+
+
+
+DAG
+dag_bank_campaign_continuous_training
+/
+
+Run
+2025-10-28, 09:54:23 UTC
+/
+
+Task
+validate_csv
+
+Details
+
+Graph
+
+Gantt
+
+Code
+
+Event Log
+
+Logs
+
+XCom
+
+K8s Pod Spec
+
+default-hostname
+*** Reading remote logs from Cloud Logging.
+[2025-10-28, 09:54:42 UTC] {local_task_job_runner.py:123} ▼ Pre task execution logs
+[2025-10-28, 09:54:42 UTC] {taskinstance.py:2616} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_bank_campaign_continuous_training.validate_csv manual__2025-10-28T09:54:23.709096+00:00 [queued]>
+[2025-10-28, 09:54:42 UTC] {taskinstance.py:2616} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_bank_campaign_continuous_training.validate_csv manual__2025-10-28T09:54:23.709096+00:00 [queued]>
+[2025-10-28, 09:54:42 UTC] {taskinstance.py:2869} INFO - Starting attempt 1 of 2
+[2025-10-28, 09:54:42 UTC] {taskinstance.py:2892} INFO - Executing <Task(PythonOperator): validate_csv> on 2025-10-28 09:54:23.709096+00:00
+[2025-10-28, 09:54:42 UTC] {standard_task_runner.py:72} INFO - Started process 13379 to run task
+[2025-10-28, 09:54:42 UTC] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'dag_bank_campaign_continuous_training', 'validate_csv', 'manual__2025-10-28T09:54:23.709096+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/dag-bank-campaign.py', '--cfg-path', '/tmp/tmpgxgn1ho_']
+[2025-10-28, 09:54:42 UTC] {standard_task_runner.py:105} INFO - Job 54: Subtask validate_csv
+[2025-10-28, 09:54:42 UTC] {task_command.py:473} INFO - Running <TaskInstance: dag_bank_campaign_continuous_training.validate_csv manual__2025-10-28T09:54:23.709096+00:00 [running]> on host airflow-worker-nb7vj
+[2025-10-28, 09:54:42 UTC] {taskinstance.py:3136} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag_bank_campaign_continuous_training' AIRFLOW_CTX_TASK_ID='validate_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-10-28T09:54:23.709096+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-28T09:54:23.709096+00:00'
+[2025-10-28, 09:54:42 UTC] {taskinstance.py:733} ▲▲▲ Log group end
+[2025-10-28, 09:54:43 UTC] {python.py:240} INFO - Done. Returned value was: True
+[2025-10-28, 09:54:43 UTC] {taskinstance.py:341} ▼ Post task execution logs
+[2025-10-28, 09:54:43 UTC] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=dag_bank_campaign_continuous_training, task_id=validate_csv, run_id=manual__2025-10-28T09:54:23.709096+00:00, execution_date=20251028T095423, start_date=20251028T095442, end_date=20251028T095443
+[2025-10-28, 09:54:43 UTC] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-10-28, 09:54:43 UTC] {taskinstance.py:3904} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-28, 09:54:43 UTC] {local_task_job_runner.py:245} ▲▲▲ Log group end
+
+
+
+dag_bank_campaign_continuous_training
+/
+
+Run
+2025-10-28, 09:54:23 UTC
+/
+
+Task
+model_evaluation
+
+Details
+
+Graph
+
+Gantt
+
+Code
+
+Event Log
+
+Logs
+
+XCom
+
+K8s Pod Spec
+
+default-hostname
+*** Reading remote logs from Cloud Logging.
+[2025-10-28, 09:54:46 UTC] {local_task_job_runner.py:123} ▼ Pre task execution logs
+[2025-10-28, 09:54:46 UTC] {taskinstance.py:2616} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_bank_campaign_continuous_training.model_evaluation manual__2025-10-28T09:54:23.709096+00:00 [queued]>
+[2025-10-28, 09:54:46 UTC] {taskinstance.py:2616} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_bank_campaign_continuous_training.model_evaluation manual__2025-10-28T09:54:23.709096+00:00 [queued]>
+[2025-10-28, 09:54:46 UTC] {taskinstance.py:2869} INFO - Starting attempt 1 of 2
+[2025-10-28, 09:54:46 UTC] {taskinstance.py:2892} INFO - Executing <Task(PythonOperator): model_evaluation> on 2025-10-28 09:54:23.709096+00:00
+[2025-10-28, 09:54:46 UTC] {standard_task_runner.py:72} INFO - Started process 13388 to run task
+[2025-10-28, 09:54:46 UTC] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'dag_bank_campaign_continuous_training', 'model_evaluation', 'manual__2025-10-28T09:54:23.709096+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/dag-bank-campaign.py', '--cfg-path', '/tmp/tmpvuj18pxj']
+[2025-10-28, 09:54:46 UTC] {standard_task_runner.py:105} INFO - Job 55: Subtask model_evaluation
+[2025-10-28, 09:54:46 UTC] {task_command.py:473} INFO - Running <TaskInstance: dag_bank_campaign_continuous_training.model_evaluation manual__2025-10-28T09:54:23.709096+00:00 [running]> on host airflow-worker-nb7vj
+[2025-10-28, 09:54:47 UTC] {taskinstance.py:3136} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='dag_bank_campaign_continuous_training' AIRFLOW_CTX_TASK_ID='model_evaluation' AIRFLOW_CTX_EXECUTION_DATE='2025-10-28T09:54:23.709096+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-28T09:54:23.709096+00:00'
+[2025-10-28, 09:54:47 UTC] {taskinstance.py:733} ▲▲▲ Log group end
+[2025-10-28, 09:54:48 UTC] {warnings.py:110} WARNING - /opt/python3.11/lib/python3.11/site-packages/xgboost/training.py:199: UserWarning: [09:54:48] WARNING: /workspace/src/learner.cc:790: 
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+
+[2025-10-28, 09:54:52 UTC] {python.py:240} INFO - Done. Returned value was: None
+[2025-10-28, 09:54:52 UTC] {taskinstance.py:341} ▼ Post task execution logs
+[2025-10-28, 09:54:52 UTC] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=dag_bank_campaign_continuous_training, task_id=model_evaluation, run_id=manual__2025-10-28T09:54:23.709096+00:00, execution_date=20251028T095423, start_date=20251028T095446, end_date=20251028T095452
+[2025-10-28, 09:54:52 UTC] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-10-28, 09:54:52 UTC] {taskinstance.py:3904} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-28, 09:54:52 UTC] {local_task_job_runner.py:245} ▲▲▲ Log group end

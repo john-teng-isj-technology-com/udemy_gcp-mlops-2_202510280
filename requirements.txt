@@ -5,3 +5,5 @@ pyarrow
 category_encoders
 imblearn
 imbalanced-learn
+dill
+pytest
