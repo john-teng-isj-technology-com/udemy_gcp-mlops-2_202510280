@@ -7,3 +7,7 @@ imblearn
 imbalanced-learn
 dill
 pytest
+google-cloud-storage
+google-cloud-bigquery
+google-cloud-logging
+gcsfs

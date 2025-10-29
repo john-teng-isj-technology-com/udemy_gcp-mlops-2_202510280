@@ -1,25 +1,25 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/udemy-mlops/bank-campaign-model', '.']
+  args: ['build', '-t', 'gcr.io/daring-night-475804-a8/bank-campaign-model', '.']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/udemy-mlops/bank-campaign-model']
+  args: ['push', 'gcr.io/daring-night-475804-a8/bank-campaign-model']
 
-- name: 'gcr.io/udemy-mlops/bank-campaign-model'
+- name: 'gcr.io/daring-night-475804-a8/bank-campaign-model'
   entrypoint: 'bash'
   args:
    - '-c'
    - |
-      python -m pytest
+      python -m pytest src/components/tests/test_training.py
 
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com/sidoncloud/model-training-repo.git']
+  args: ['clone', 'https://github.com/john-teng-isj-technology-com/udemy_gcp-mlops-2_202510280.git']
 
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', 'model-training-repo/bank_campaign_model_training.py', 'gs://us-central1-mlops-airflow-faa6f9bc-bucket/dags']
+  args: ['cp', 'src/components/training/bank_campaign_model_training.py', 'gs://northamerica-northeast1-gcp-b848f59e-bucket/dags/src/components/training/bank_campaign_model_training.py']
 
 images:
-- 'gcr.io/udemy-mlops/bank-campaign-model'
+- 'gcr.io/daring-night-475804-a8/bank-campaign-model'
 
 options:
   logging: CLOUD_LOGGING_ONLY

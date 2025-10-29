@@ -1,0 +1,37 @@
+=============================== 1 error in 1.94s ===============================
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+ERROR src/components/tests/test_training.py
+=========================== short test summary info ============================
+E   ModuleNotFoundError: No module named 'google'
+    from google.cloud import storage
+src/components/training/bank_campaign_model_training.py:11: in <module>
+    from src.components.training.bank_campaign_model_training import (
+src/components/tests/test_training.py:9: in <module>
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return _bootstrap._gcd_import(name[level:], package, level)
+/usr/local/lib/python3.11/importlib/__init__.py:126: in import_module
+Traceback:
+Hint: make sure your test modules/packages have valid Python names.
+ImportError while importing test module '/workspace/src/components/tests/test_training.py'.
+____________ ERROR collecting src/components/tests/test_training.py ____________
+==================================== ERRORS ====================================
+collected 0 items / 1 error
+rootdir: /workspace
+platform linux -- Python 3.11.14, pytest-8.4.2, pluggy-1.6.0
+============================= test session starts ==============================
+Already have image (with digest): gcr.io/daring-night-475804-a8/bank-campaign-model
+
+
+# Dockerfile
+
+FROM python:3.11-slim
+
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+
+COPY src/components/training/bank_campaign_model_training.py bank_campaign_model_training.py
+COPY requirements.txt requirements.txt
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 src/app/app:app

@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from xgboost import XGBClassifier
 from joblib import load
-from bank_campaign_model_training import (
+from src.components.training.bank_campaign_model_training import (
     encode_categorical, preprocess_features, apply_bucketing,
     train_model, get_classification_report, load_model_artifact,
 )
